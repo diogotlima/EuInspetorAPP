@@ -1,0 +1,63 @@
+
+<link rel="stylesheet" href="css/internas.css">
+<ion-modal-view ng-controller="securecontroller">
+  <ion-content>
+    <form ng-submit="doLogin()">
+      <div class="list normal">
+        <div class="titulosInternas">
+          <div class="boxTitulos">
+            <span class="icon-bullhorn"></span> Foto
+          </div>
+          <div class="profileJeoas">
+            <button class="button button-clear" ng-click="closesendPhoto()">Fechar</button>
+          </div>
+        </div>
+        <div class="boxForms fletf widthFull">
+            <div class="list margem20 formCustom">
+
+              <div class="boxImagemDenuncias">
+                <div class="fotoAqui" ng-click="upload()">
+                  <span class="icon-camera iconRedesSociais placehold"></span>
+                  <span class="instrucao">Toque aqui para acessar sua câmera!</span>
+                </div>
+                <!-- <img class="mostraFoto" ng-show="imgURI !== undefined" ng-src="{{imgURI}}"> -->
+                <div class="row" ng-repeat="image in images" ng-if="$index % 4 === 0">
+                  <div class="col col-50" ng-if="$index < images.length">
+                    <img ng-src="data:image/jpeg;base64,{{ images[$index].image }}" width="100%">
+                  </div>
+                  <div class="col col-50" ng-if="$index + 1 < images.length">
+                    <img ng-src="data:image/jpeg;base64,{{ images[$index + 1].image }}" width="100%">
+                  </div>
+                  <div class="col col-50" ng-if="$index + 2 < images.length">
+                    <img ng-src="data:image/jpeg;base64,{{ images[$index + 2].image }}" width="100%">
+                  </div>
+                  <div class="col col-50" ng-if="$index + 3 < images.length">
+                    <img ng-src="data:image/jpeg;base64,{{ images[$index + 3].image }}" width="100%">
+                  </div>
+                </div>
+
+                <div ng-init="list()">
+                    <!-- <button class="right button button-icon icon ion-plus" ng-click="create()"></button>
+                    <div class="list">
+                        <div ng-repeat="titulo in data.titulos" class="item">
+                            {{titulo.title}}
+                        </div>
+                    </div> -->
+                </div>
+
+
+              <div class="envio">
+                <p class="instrucao alignLeft">Diga algo sobre a foto.</p>
+                <!-- <input type="name" ng-model="objeto.legenda" placeholder="Legenda"> -->
+                <textarea placeholder="Apenas 140 caracteres" ng-model="textoFoto.legenda" type="text" maxlength="140"></textarea>
+
+                <button class="button button-block button-positive" type="submit" ng-click="create(textoFoto)"><span class="icon-done"></span> Enviar</button>
+              </div>
+              
+            
+            </div>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>

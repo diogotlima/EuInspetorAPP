@@ -1,0 +1,48 @@
+<link href="css/internas.css" rel="stylesheet">
+<ion-view view-title="Eu Inspetor">
+	<ion-nav-bar class="bar-stable">
+      <ion-nav-back-button class="blackButton">
+      </ion-nav-back-button>
+    </ion-nav-bar>
+  <ion-content>
+    <div class="contentInternas list">
+      <div class="titulosInternas">
+        <div class="boxTitulos">
+          <span class="icon-bullhorn"></span> Denúncias
+        </div>
+
+      </div>
+      <div class="conteudoInternas padMar marginBottom ciredesociais">
+        <p>Participe, envie sua denúncia! </p>
+        <div class="NomeRedes">
+          <div class="boxTakePicture" ng-click="opensendPhoto()">
+              <span class="icon-camera iconRedesSociais"></span>
+              <h2 class="tituloRedes">Tire uma foto</h2>
+              <p class="subtitulosRedes">Utilize a câmera do seu smartphone!</p>
+          </div>
+        </div>
+        <div class="NomeRedes" ng-click="opensendAudio()">
+          <span class="icon-mic iconRedesSociais"></span>
+          <h2 class="tituloRedes">Grave um áudio</h2>
+
+          <p class="subtitulosRedes">Utilize o microfone do seu celular.</p>
+        </div>
+        <div class="NomeRedes" ng-click="opensendTexto()">
+          <span class="icon-pencil iconRedesSociais"></span>
+          <h2 class="tituloRedes">Escreva uma denúncia</h2>
+          <p class="subtitulosRedes">Utilize textos para denunciar.</p>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
+<script type="text/javascript">
+ function hideandshowDiv(){ /* Função hideandshow / Function hideandshow  */
+ if(document.getElementById('hideDiv').style.display == 'inline-flex'){
+ document.getElementById('hideDiv').style.display = 'none';
+ }else{
+ document.getElementById('hideDiv').style.display = 'inline-flex';
+ }
+ }
+</script>
+
